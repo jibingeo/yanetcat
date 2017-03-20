@@ -69,7 +69,7 @@ var RootCmd = &cobra.Command{
 		listenAddr, targetAddr = _listenAddr, _targetAddr
 		return nil
 	},
-	RunE: func(cmd *cobra.Command, args []string) error {
+	Run: func(cmd *cobra.Command, args []string) {
 
 		listener, err := net.Listen(listenAddr.Scheme, listenAddr.Host)
 		if err != nil {
