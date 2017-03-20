@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/jibingeo/netproxy/cmd"
+	"github.com/jibingeo/yanetcat/cmd"
 )
 
 func main() {

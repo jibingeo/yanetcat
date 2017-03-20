@@ -7,7 +7,7 @@ import (
 	"net"
 	"net/url"
 
-	"github.com/jibingeo/netproxy/pipe"
+	"github.com/jibingeo/yanetcat/pipe"
 	"github.com/spf13/cobra"
 )
 
@@ -56,7 +56,7 @@ var RootCmd = &cobra.Command{
 			return errors.New("listen address missing")
 		}
 		if target == "" {
-			return errors.New("listen address missing")
+			return errors.New("target address missing")
 		}
 		_listenAddr, err := Parse(listen)
 		if err != nil {
