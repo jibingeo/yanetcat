@@ -38,7 +38,7 @@ func handleRequest(lConn net.Conn) {
 		log.Println("Connection closed:", lConn.RemoteAddr().String())
 	}()
 
-	rConn, err := net.Dial(targetAddr.Scheme, targetAddr.Host+targetAddr.Path)
+	rConn, err := net.Dial(targetAddr.Scheme, targetAddr.Host)
 	if err != nil {
 		log.Println("Docker API:", err)
 		return
@@ -71,7 +71,7 @@ var RootCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) error {
 
-		listener, err := net.Listen(listenAddr.Scheme, listenAddr.Host+listenAddr.Path)
+		listener, err := net.Listen(listenAddr.Scheme, listenAddr.Host)
 		if err != nil {
 			log.Fatalln("Error listening:", err.Error())
 		}
